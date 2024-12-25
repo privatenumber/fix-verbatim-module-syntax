@@ -23,7 +23,10 @@ However, enabling `verbatimModuleSyntax` may initially produce many errors relat
 
 ## Usage
 
-Ensure TypeScript v5 is installed in your project, then run the following command in the project directory, specifying the path to your `tsconfig.json`:
+Ensure TypeScript v5 is installed in your project, then run the following command in the project directory, specifying the path to your `tsconfig.json`.
+
+> [!WARNING]
+> This command will modify your files. Be sure to back up or commit your changes beforehand.
 
 ```sh
 npx fix-verbatimModuleSyntax ./tsconfig.json

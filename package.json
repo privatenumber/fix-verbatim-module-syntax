@@ -1,14 +1,12 @@
 {
   "name": "fix-verbatimModuleSyntax",
   "version": "0.0.0-semantic-release",
-  "description": "Publish your npm package to a GitHub repository branch",
+  "description": "CLI tool to auto-fix verbatimModuleSyntax errors",
   "keywords": [
-    "npm",
-    "publish",
-    "git",
-    "github",
-    "branch",
-    "branches"
+    "typescript",
+    "tsconfig",
+    "fix",
+    "verbatimModuleSyntax"
   ],
   "license": "MIT",
   "repository": "privatenumber/fix-verbatimModuleSyntax",
@@ -25,6 +23,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "cleye": "^1.3.2",
     "kolorist": "^1.8.0",
     "magic-string": "^0.30.17"
   }
