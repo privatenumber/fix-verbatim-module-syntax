@@ -60,6 +60,9 @@ Both tools complement each other and can help ensure your project adheres to cle
 - Use `fix-verbatim-module-syntax` for a one-time, comprehensive fix of your project when enabling `verbatimModuleSyntax`.
 - Use `consistent-type-imports` for ongoing auto-fixable enforcement of type-only imports during development. 
 
+> [!TIP]
+> Along with `verbatimModuleSyntax`, it's recommended to enable the [`@typescript-eslint/no-import-type-side-effects`](https://typescript-eslint.io/rules/no-import-type-side-effects/) ESLint rule to discourage using side-effects from imported modules.
+
 ## Sponsors
 
 <p align="center">
