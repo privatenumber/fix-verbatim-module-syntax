@@ -34,13 +34,31 @@ npx fix-verbatim-module-syntax ./tsconfig.json
 
 After running the command, add [`"verbatimModuleSyntax": true`](https://www.typescriptlang.org/tsconfig/verbatimModuleSyntax.html) to your `tsconfig.json`.
 
-### Dry-run Mode
+### Dry-run mode
 
 To preview changes without modifying files, use the `--dry` flag:
 
 ```sh
 npx fix-verbatim-module-syntax --dry ./tsconfig.json
 ```
+
+### ESLint integration
+
+You can enforce and auto-fix type-only imports directly in your ESLint setup by using `typescript-eslint`'s [`consistent-type-imports`](https://typescript-eslint.io/rules/consistent-type-imports/) rule.
+
+Here's how they compare:
+
+| | `fix-verbatim-module-syntax` | `@typescript-eslint/consistent-type-imports` |
+|-|-|-|
+| **Type detection** | Uses TypeScript's type-checker for precise identification | Analyzes code usage to infer types |
+| **Usage** | TypeScript-powered CLI tool | Works within ESLint for broader linting coverage |
+| **Scope** | Files matching the `tsconfig.json` configuration | Files passed to ESLint |
+
+#### When to use which?
+Both tools complement each other and can help ensure your project adheres to clean, modern TypeScript standards.
+
+- Use `fix-verbatim-module-syntax` for a one-time, comprehensive fix of your project when enabling `verbatimModuleSyntax`.
+- Use `consistent-type-imports` for ongoing auto-fixable enforcement of type-only imports during development. 
 
 ## Sponsors
 
