@@ -1,4 +1,4 @@
-import { describe, expect } from 'manten';
+import { describe, test, expect } from 'manten';
 import { createFixture } from 'fs-fixture';
 import { fixVms } from './utils/fix-vms.js';
 
@@ -8,8 +8,8 @@ const basicTypeImport = {
 	'file.ts': 'export type a = 1; export type b = 2',
 };
 
-describe('fix-verbatim-module-syntax', ({ describe, test }) => {
-	describe('Error cases', ({ test }) => {
+describe('fix-verbatim-module-syntax', () => {
+	describe('Error cases', () => {
 		test('Fails if no tsconfig', async () => {
 			await using fixture = await createFixture();
 
