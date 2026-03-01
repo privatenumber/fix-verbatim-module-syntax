@@ -1,6 +1,7 @@
 import { describe, test, expect } from 'manten';
 import { createFixture } from 'fs-fixture';
-import { fixVms } from './utils/fix-vms.js';
+// eslint-disable-next-line import-x/extensions -- native Node type stripping requires .ts
+import { fixVms } from './utils/fix-vms.ts';
 
 const basicTypeImport = {
 	'tsconfig.json': '{}',

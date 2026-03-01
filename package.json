@@ -18,13 +18,14 @@
 	"files": [
 		"dist"
 	],
+	"type": "module",
 	"bin": "dist/cli.mjs",
 	"packageManager": "pnpm@9.12.1",
 	"scripts": {
 		"build": "pkgroll --minify",
 		"lint": "lintroll --cache .",
 		"type-check": "tsc",
-		"test": "tsx tests",
+		"test": "node tests/index.ts",
 		"prepack": "pnpm build && clean-pkg-json",
 		"prepare": "skills-npm"
 	},
@@ -45,7 +46,6 @@
 		"nano-spawn": "^0.2.0",
 		"pkgroll": "^2.6.0",
 		"skills-npm": "^1.0.0",
-		"tsx": "^4.19.2",
-		"typescript": "^5.7.2"
+		"typescript": "^5.8.0"
 	}
 }

@@ -1,11 +1,12 @@
 {
 	"compilerOptions": {
-		"target": "ESNext",
-		"module": "Preserve",
+		"target": "esnext",
+		"module": "nodenext",
 		"resolveJsonModule": true,
+		"allowImportingTsExtensions": true,
 		"strict": true,
 		"noEmit": true,
-		"esModuleInterop": true,
+		"erasableSyntaxOnly": true,
 		"verbatimModuleSyntax": true,
 		"skipLibCheck": true,
 	},

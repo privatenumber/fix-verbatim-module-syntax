@@ -4,7 +4,9 @@ import ts from 'typescript';
 import MagicString from 'magic-string';
 import { cli } from 'cleye';
 import { cyan, magenta } from 'kolorist';
-import { name, version } from '../package.json';
+import packageJson from '../package.json' with { type: 'json' };
+
+const { name, version } = packageJson;
 
 const parseTsconfig = (
 	tsconfigPath: string,
