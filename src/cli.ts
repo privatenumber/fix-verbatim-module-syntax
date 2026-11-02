@@ -110,13 +110,17 @@ const fixVerbatimModuleSyntax = (
 				type: Boolean,
 				description: 'Print changes without writing to disk',
 			},
+			check: {
+				type: Boolean,
+				description: 'Exit with non-zero exit code if changes can be written',
+			},
 		},
 	});
 
 	const tsconfigPath = argv._.tsconfigPath ?? 'tsconfig.json';
 	const fixes = fixVerbatimModuleSyntax(tsconfigPath);
 
-	const { dry } = argv.flags;
+	const { dry, check } = argv.flags;
 	const cwd = process.cwd();
 	for (const [filePath, { ms, importNames }] of fixes) {
 		if (!dry) {
@@ -132,6 +136,10 @@ const fixVerbatimModuleSyntax = (
 			importNames.map(magenta).join(', '),
 		);
 		console.log();
+	}
+
+	if (check && fixes.size > 0) {
+		process.exitCode = 1;
 	}
 })().catch((error) => {
 	process.exitCode = 1;
